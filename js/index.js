@@ -1,18 +1,25 @@
-document.write("A pessoa é: ");
+function rectArea() {
+    let num1 = parseInt(prompt("Diga a altura:"));
+    let num2 = parseInt(prompt("Diga a largura:"));
 
-let idade = parseInt(prompt("Qual é a sua idade?"));
+    let area = num1 * num2;
+    return area;
+}
+function circleArea() {
+    let num1 = parseInt(prompt("Diga o raio:"));
 
-console.log(idade);
+    let area = num1 * num1 * Math.PI;
+    return area;
+}
+let figura;
 
-if (idade > 0 && idade <= 12) {
-    console.log("A pessoa é uma criança.");
-}
-else if (idade > 12 && idade <= 18) {
-    console.log("A pessoa é um adolecente.");
-}
-else if (idade > 18 && idade <= 60) {
-    console.log("A pessoa é um adulto.");
-}
-else {
-    console.log("A pessoa é um idoso.");
+while ((figura = prompt("Escolha a figura geométrica:(C = circulo, T = triangulo, R = rectangulo, Q= sair)")) != "Q") {
+    console.log(figura);
+    if (figura == "C") {
+        console.log(circleArea());
+    } else if (figura == "T") {
+        console.log(rectArea() / 2);
+    } else if (figura == "R") {
+        console.log(rectArea());
+    }
 }
